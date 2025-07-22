@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <main>
+    <section class="task-form-section">
+      <h2>Create Task</h2>
+      <form id="task-form">
+        <input type="text" id="title" placeholder="Task Title" required />
+        <textarea id="description" placeholder="Description"></textarea>
+        
+        <label for="due-date">Due Date:</label>
+        <input type="date" id="due-date" />
+
+        <label for="tags">Tags (comma separated):</label>
+        <input type="text" id="tags" placeholder="e.g. work, urgent" />
+
+        <label for="recurrence">Repeat:</label>
+        <select id="recurrence">
+          <option value="none">None</option>
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+          <option value="custom">Custom (every X days)</option>
+        </select>
+
+        <input type="number" id="custom-interval" placeholder="Interval (days)" style="display:none;" min="1" />
+
+        <button type="submit">Save Task</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="scripts/recurrence.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
